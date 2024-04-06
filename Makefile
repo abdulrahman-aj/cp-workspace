@@ -1,4 +1,4 @@
-CC = g++ -std=c++17
+CC = clang++ -std=c++20
 FLAGS = -Wall -Wextra -Wfloat-equal -DLOCAL -O2
 INCLUDES = -lm -I .
 
