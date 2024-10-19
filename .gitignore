@@ -2,6 +2,7 @@
 *.out
 *.class
 *.gch
+*.pch
 myAnswer
 correctAnswer
 gmon.out
