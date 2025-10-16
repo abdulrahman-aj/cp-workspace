@@ -40,7 +40,7 @@
 #include <sys/resource.h>
 
 class StackInitializer {
- public:
+public:
   StackInitializer() {
     const rlim_t val = 268435456;
     struct rlimit lim = {.rlim_cur = val, .rlim_max = val};
@@ -53,7 +53,7 @@ class StackInitializer {
 };
 
 class Timer {
- public:
+public:
   Timer() { _startTime = std::chrono::system_clock::now(); }
 
   ~Timer() {
@@ -61,10 +61,11 @@ class Timer {
     auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(_endTime -
                                                                     _startTime)
                   .count();
-    std::cerr << "Time elapsed: " << ms / 1000.0 << "s.\n";
+    std::cerr << "\033[1;31mTime elapsed:\033[0m \033[1;33m" << ms / 1000.0
+              << "s.\033[0m\n";
   }
 
- private:
+private:
   std::chrono::time_point<std::chrono::system_clock> _startTime;
 };
 
